@@ -55,11 +55,7 @@ public class Banheiro {
                 lock.unlock();
             }
             
-            System.out.println("Mulher entrou.\n" + this.homensUsando
-                        + " homens usando o banheiro.\t\t" + this.homensEsperando
-                        + " homens esperando.\n" + this.mulheresUsando
-                        + " mulheres usando o banheiro.\t\t" + this.mulheresEsperando
-                        + " mulheres esperando.\n\n");
+            printStatus();
             sleep();
             //
             lock.lock();
@@ -121,6 +117,14 @@ public class Banheiro {
         } finally {
             // lock.unlock();
         }
+    }
+    
+    private void printStatus(){
+        System.out.println("Mulher entrou.\n" + this.homensUsando
+                        + " homens usando o banheiro.\t\t" + this.homensEsperando
+                        + " homens esperando.\n" + this.mulheresUsando
+                        + " mulheres usando o banheiro.\t\t" + this.mulheresEsperando
+                        + " mulheres esperando.\n\n");
     }
     
     private void sleep(){
